@@ -1,10 +1,10 @@
 class Mpu < Formula
   desc "MPU - Memory Processing Unit, a 16-bit virtual computer system with assembler"
   homepage "https://github.com/jsando/mpu"
-  url "https://github.com/jsando/mpu/releases/download/v1.0.0/mpu_v1.0.0_Darwin_universal.tar.gz"
-  sha256 "1cb3084e881bfb5ff9be6329af5970f3e76c1274d17380c26ec2b195b9bc1fca"
+  url "https://github.com/jsando/mpu/releases/download/v1.0.1/mpu_v1.0.1_Darwin_universal.tar.gz"
+  sha256 "14c725b51798120f01c3e4e3830b04db82fbec5d30c88b2363db69c3cbeca207"
   license "Apache-2.0"
-  version "v1.0.0"
+  version "v1.0.1"
 
   depends_on "sdl2"
   depends_on "sdl2_image"
@@ -14,6 +14,21 @@ class Mpu < Formula
 
   def install
     bin.install "mpu"
+    doc.install "README.md"
+    (pkgshare/"examples").install Dir["examples/*"]
+  end
+
+  def caveats
+    <<~EOS
+      Example programs have been installed to:
+        #{HOMEBREW_PREFIX}/share/mpu/examples/
+      
+      To run an example:
+        mpu run #{HOMEBREW_PREFIX}/share/mpu/examples/hello.s
+      
+      For more information, see:
+        #{HOMEBREW_PREFIX}/share/doc/mpu/README.md
+    EOS
   end
 
   test do
