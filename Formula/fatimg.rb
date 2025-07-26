@@ -5,21 +5,21 @@
 class Fatimg < Formula
   desc "Go utility for creating and managing FAT32 boot (EFI) partition disk images"
   homepage "https://github.com/jsando/fatimg"
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jsando/fatimg/releases/download/v0.5.0/fatimg_Darwin_x86_64.tar.gz"
-      sha256 "60f49895d2364898f0b0c67e88e3e86844fb322eacbdab06476418d3b1acb990"
+      url "https://github.com/jsando/fatimg/releases/download/v0.5.1/fatimg_Darwin_x86_64.tar.gz"
+      sha256 "b7f549c23315ad306ada095d3272f5d113a1c6cb5740b1e27e4306eb072b3622"
 
       def install
         bin.install "fatimg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jsando/fatimg/releases/download/v0.5.0/fatimg_Darwin_arm64.tar.gz"
-      sha256 "dab699401f318c2f7a324f911c11d5cea98090f8c08a9b0b35797b224d86e7ec"
+      url "https://github.com/jsando/fatimg/releases/download/v0.5.1/fatimg_Darwin_arm64.tar.gz"
+      sha256 "b9355e23f2830eba7a14e9a4c1153d43006ba9179a6b6e6c905189b1cfe99ad5"
 
       def install
         bin.install "fatimg"
@@ -29,15 +29,15 @@ class Fatimg < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jsando/fatimg/releases/download/v0.5.0/fatimg_Linux_x86_64.tar.gz"
-      sha256 "e28c9105b4879d633fcd396f2477b3052f78a0c3466e52674427d7bc1a8a8177"
+      url "https://github.com/jsando/fatimg/releases/download/v0.5.1/fatimg_Linux_x86_64.tar.gz"
+      sha256 "e16cca0909accc6f7a8a0dc5ada4ef110ef1a2572d37659d1d0d46a86617afa7"
       def install
         bin.install "fatimg"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jsando/fatimg/releases/download/v0.5.0/fatimg_Linux_arm64.tar.gz"
-      sha256 "08cc50b79c941e1a0be245916c9f3b487851d8c539353d2c74cfb09ef90607b8"
+      url "https://github.com/jsando/fatimg/releases/download/v0.5.1/fatimg_Linux_arm64.tar.gz"
+      sha256 "6bcd1fcf62ee4ff340f0a2d006b356d00206724d3af1e67be2397751677f3480"
       def install
         bin.install "fatimg"
       end
